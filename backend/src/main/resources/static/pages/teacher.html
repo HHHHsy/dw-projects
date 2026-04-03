@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>教师专区 - 网页展活动</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- DREAMWEAVER_PREVIEW_START - 此部分用于Dreamweaver预览，请在../components/header.html中修改实际内容 -->
+    <div style="display:none;" id="header-placeholder"></div>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>网页展活动</h1>
+            </div>
+            <nav class="nav" id="nav">
+                <ul>
+                    <li><a href="../index.html">首页</a></li>
+                    <li><a href="course.html">课程学习</a></li>
+                    <li><a href="tools.html">工具教程</a></li>
+                    <li><a href="tasks.html">实践任务</a></li>
+                    <li><a href="works.html">作品展示</a></li>
+                    <li><a href="quiz.html">在线测试</a></li>
+                    <li><a href="resources.html">资源下载</a></li>
+                    <li id="teacherNavItem" style="display: none;"><a href="teacher.html" class="active">教师专区</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions" id="userActions">
+                <button class="btn-login" id="loginBtn" onclick="showLoginModal()">登录</button>
+                <div class="user-info" id="userInfo" style="display: none;">
+                    <span id="userName"></span>
+                    <button class="btn-logout" onclick="logout()">退出</button>
+                </div>
+            </div>
+            <button class="menu-toggle" id="menuToggle">☰</button>
+        </div>
+    </header>
+
+    <div class="login-modal" id="loginModal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeLoginModal()">&times;</span>
+            <h2>用户登录</h2>
+            <form id="loginForm" onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label for="loginUsername">用户名</label>
+                    <input type="text" id="loginUsername" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">密码</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                <button type="submit" class="btn btn-primary">登录</button>
+            </form>
+        </div>
+    </div>
+    <!-- DREAMWEAVER_PREVIEW_END -->
+
+    <section class="page-content">
+        <div class="container">
+            <h2 class="page-title">👨‍🏫 教师专区</h2>
+            <div class="alert alert-info">
+                此区域仅对教师账号开放。请使用教师账号登录。
+            </div>
+            
+            <div class="section">
+                <h3>📊 学生管理</h3>
+                <div class="card-grid">
+                    <div class="card">
+                        <h4>学生列表</h4>
+                        <p>查看和管理所有注册学生</p>
+                        <a href="#" class="btn-small" onclick="showAlert('功能开发中...', 'info')">进入</a>
+                    </div>
+                    <div class="card">
+                        <h4>班级管理</h4>
+                        <p>创建和管理班级信息</p>
+                        <a href="#" class="btn-small" onclick="showAlert('功能开发中...', 'info')">进入</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3>📝 作品管理</h3>
+                <div class="card-grid">
+                    <div class="card">
+                        <h4>作业批改</h4>
+                        <p>查看和批改学生提交的作品</p>
+                        <a href="#" class="btn-small" onclick="showAlert('功能开发中...', 'info')">进入</a>
+                    </div>
+                    <div class="card">
+                        <h4>作品评选</h4>
+                        <p>评选优秀作品进行展示</p>
+                        <a href="#" class="btn-small" onclick="showAlert('功能开发中...', 'info')">进入</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3>📚 内容管理</h3>
+                <div class="card-grid">
+                    <div class="card">
+                        <h4>课程管理</h4>
+                        <p>添加和编辑课程内容</p>
+                        <a href="#" class="btn-small" onclick="showAlert('功能开发中...', 'info')">进入</a>
+                    </div>
+                    <div class="card">
+                        <h4>题目管理</h4>
+                        <p>维护在线测试的题库</p>
+                        <a href="#" class="btn-small" onclick="showAlert('功能开发中...', 'info')">进入</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 网页展活动学习平台. 让每个孩子都能学会网页制作！</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/loader.js"></script>
+</body>
+</html>

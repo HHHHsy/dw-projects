@@ -1,0 +1,77 @@
+<header class="header">
+    <div class="container">
+        <div class="logo">
+            <h1>网页展活动</h1>
+        </div>
+        <nav class="nav" id="nav">
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li><a href="pages/course.html">课程学习</a></li>
+                <li><a href="pages/tools.html">工具教程</a></li>
+                <li><a href="pages/tasks.html">实践任务</a></li>
+                <li><a href="pages/works.html">作品展示</a></li>
+                <li><a href="pages/quiz.html">在线测试</a></li>
+                <li><a href="pages/resources.html">资源下载</a></li>
+                <li id="teacherNavItem" style="display: none;"><a href="pages/teacher.html">教师专区</a></li>
+            </ul>
+        </nav>
+        <div class="user-actions" id="userActions">
+            <button class="btn-login" id="loginBtn" onclick="showLoginModal()">登录</button>
+            <div class="user-info" id="userInfo" style="display: none;">
+                <span id="userName"></span>
+                <button class="btn-logout" onclick="logout()">退出</button>
+            </div>
+        </div>
+        <button class="menu-toggle" id="menuToggle">☰</button>
+    </div>
+</header>
+
+<div class="login-modal" id="loginModal" style="display: none;">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeLoginModal()">&times;</span>
+        <h2 id="modalTitle">用户登录</h2>
+        
+        <!-- 登录表单 -->
+        <form id="loginForm" onsubmit="handleLogin(event)">
+            <div class="form-group">
+                <label for="loginUsername">用户名</label>
+                <input type="text" id="loginUsername" required>
+            </div>
+            <div class="form-group">
+                <label for="loginPassword">密码</label>
+                <input type="password" id="loginPassword" required>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">登录</button>
+            <div style="text-align: center; margin-top: 15px;">
+                <a href="#" onclick="toggleAuthMode(event)" style="color: #4CAF50; text-decoration: none;">没有账号？去注册</a>
+            </div>
+        </form>
+
+        <!-- 注册表单 -->
+        <form id="registerForm" onsubmit="handleRegister(event)" style="display: none;">
+            <div class="form-group">
+                <label for="regUsername">用户名</label>
+                <input type="text" id="regUsername" required>
+            </div>
+            <div class="form-group">
+                <label for="regPassword">密码</label>
+                <input type="password" id="regPassword" required>
+            </div>
+            <div class="form-group">
+                <label for="regRealName">真实姓名</label>
+                <input type="text" id="regRealName">
+            </div>
+            <div class="form-group">
+                <label>角色</label>
+                <div style="display: flex; gap: 20px; margin-top: 5px;">
+                    <label><input type="radio" name="regRole" value="student" checked> 学生</label>
+                    <label><input type="radio" name="regRole" value="teacher"> 教师</label>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">注册</button>
+            <div style="text-align: center; margin-top: 15px;">
+                <a href="#" onclick="toggleAuthMode(event)" style="color: #4CAF50; text-decoration: none;">已有账号？去登录</a>
+            </div>
+        </form>
+    </div>
+</div>

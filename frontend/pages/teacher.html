@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>教师专区 - 网页展活动</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>🎨 网页展活动 - 教师端</h1>
+            </div>
+            <nav class="nav" id="nav">
+                <ul>
+                    <li><a href="../index.html">首页</a></li>
+                    <li><a href="course.html">课程学习</a></li>
+                    <li><a href="tools.html">工具教程</a></li>
+                    <li><a href="tasks.html">实践任务</a></li>
+                    <li><a href="works.html">作品展示</a></li>
+                    <li><a href="quiz.html">在线测试</a></li>
+                    <li><a href="resources.html">资源下载</a></li>
+                    <li><a href="teacher.html" class="active">教师专区</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" id="menuToggle">☰</button>
+        </div>
+    </header>
+
+    <section class="page-content">
+        <div class="container">
+            <h2 class="page-title">👨‍🏫 教师专区</h2>
+            
+            <div class="section">
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="classManage">班级管理</button>
+                    <button class="tab-btn" data-tab="progressMonitor">进度监控</button>
+                    <button class="tab-btn" data-tab="resourceManage">资源管理</button>
+                    <button class="tab-btn" data-tab="evaluation">评价反馈</button>
+                </div>
+
+                <div id="classManage" class="tab-content active">
+                    <h3>📋 班级管理</h3>
+                    <div class="card" style="margin-bottom: 30px;">
+                        <h4>创建新班级</h4>
+                        <form>
+                            <div class="form-group">
+                                <label>班级名称</label>
+                                <input type="text" placeholder="例如：七年级(1)班">
+                            </div>
+                            <div class="form-group">
+                                <label>班级人数</label>
+                                <input type="number" placeholder="请输入班级人数">
+                            </div>
+                            <button type="button" class="btn-submit" onclick="showAlert('班级创建成功！', 'success')">创建班级</button>
+                        </form>
+                    </div>
+                    
+                    <div class="card" style="margin-bottom: 30px;">
+                        <h4>导入学生名单</h4>
+                        <form>
+                            <div class="form-group">
+                                <label>选择班级</label>
+                                <select>
+                                    <option>请选择班级</option>
+                                    <option>七年级(1)班</option>
+                                    <option>七年级(2)班</option>
+                                    <option>七年级(3)班</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>上传Excel文件</label>
+                                <input type="file" accept=".xlsx,.xls">
+                            </div>
+                            <button type="button" class="btn-submit" onclick="showAlert('学生名单导入成功！', 'success')">导入</button>
+                        </form>
+                    </div>
+
+                    <h4>班级列表</h4>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>班级名称</th>
+                                    <th>学生人数</th>
+                                    <th>创建时间</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>七年级(1)班</td>
+                                    <td>45人</td>
+                                    <td>2024-01-01</td>
+                                    <td>
+                                        <a href="#" class="btn-small" onclick="showAlert('查看学生列表', 'info')">查看</a>
+                                        <a href="#" class="btn-small" onclick="showAlert('编辑班级信息', 'info')">编辑</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>七年级(2)班</td>
+                                    <td>42人</td>
+                                    <td>2024-01-01</td>
+                                    <td>
+                                        <a href="#" class="btn-small" onclick="showAlert('查看学生列表', 'info')">查看</a>
+                                        <a href="#" class="btn-small" onclick="showAlert('编辑班级信息', 'info')">编辑</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>七年级(3)班</td>
+                                    <td>48人</td>
+                                    <td>2024-01-01</td>
+                                    <td>
+                                        <a href="#" class="btn-small" onclick="showAlert('查看学生列表', 'info')">查看</a>
+                                        <a href="#" class="btn-small" onclick="showAlert('编辑班级信息', 'info')">编辑</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="progressMonitor" class="tab-content">
+                    <h3>📊 进度监控</h3>
+                    
+                    <div class="card">
+                        <h4>学习统计概览</h4>
+                        <div class="card-grid" style="margin-top: 20px;">
+                            <div class="card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                                <h4 style="color: white;">总学生数</h4>
+                                <p style="font-size: 36px; font-weight: bold;">135</p>
+                            </div>
+                            <div class="card" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white;">
+                                <h4 style="color: white;">任务完成率</h4>
+                                <p style="font-size: 36px; font-weight: bold;">72%</p>
+                            </div>
+                            <div class="card" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+                                <h4>平均测试分数</h4>
+                                <p style="font-size: 36px; font-weight: bold;">82分</p>
+                            </div>
+                            <div class="card" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);">
+                                <h4>已提交作品</h4>
+                                <p style="font-size: 36px; font-weight: bold;">98份</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h4 style="margin-top: 30px;">学生学习进度</h4>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>学生姓名</th>
+                                    <th>班级</th>
+                                    <th>任务1</th>
+                                    <th>任务2</th>
+                                    <th>任务3</th>
+                                    <th>任务4</th>
+                                    <th>测试成绩</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>张三</td>
+                                    <td>七(1)班</td>
+                                    <td><span style="color: #4CAF50;">✓</span></td>
+                                    <td><span style="color: #4CAF50;">✓</span></td>
+                                    <td><span style="color: #4CAF50;">✓</span></td>
+                                    <td><span style="color: #4CAF50;">✓</span></td>
+                                    <td>90分</td>
+                                    <td><a href="#" class="btn-small" onclick="showAlert('查看详情', 'info')">详情</a></td>
+                                </tr>
+                                <tr>
+                                    <td>李四</td>
+                                    <td>七(1)班</td>
+                                    <td><span style="color: #4CAF50;">✓</span></td>
+                                    <td><span style="color: #4CAF50;">✓</span></td>
+                                    <td><span style="color: #f44336;">✗</span></td>
+                                    <td><span style="color: #999;">-</span></td>
+                                    <td>75分</td>
+                                    <td><a href="#" class="btn-small" onclick="showAlert('查看详情', 'info')">详情</a></td>
+                                </tr>
+                                <tr>
+                                    <td>王五</td>
+                                    <td>七(2)班</td>
+                                    <td><span style="color: #4CAF50;">✓</span></td>
+                                    <td><span style="color: #f44336;">✗</span></td>
+                                    <td><span style="color: #999;">-</span></td>
+                                    <td><span style="color: #999;">-</span></td>
+                                    <td>65分</td>
+                                    <td><a href="#" class="btn-small" onclick="showAlert('查看详情', 'info')">详情</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="resourceManage" class="tab-content">
+                    <h3>📁 资源管理</h3>
+                    
+                    <div class="card" style="margin-bottom: 30px;">
+                        <h4>上传新资源</h4>
+                        <form>
+                            <div class="form-group">
+                                <label>资源名称</label>
+                                <input type="text" placeholder="请输入资源名称">
+                            </div>
+                            <div class="form-group">
+                                <label>资源类型</label>
+                                <select>
+                                    <option>请选择类型</option>
+                                    <option>教学课件</option>
+                                    <option>视频教程</option>
+                                    <option>素材资源</option>
+                                    <option>其他</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>选择文件</label>
+                                <input type="file">
+                            </div>
+                            <div class="form-group">
+                                <label>资源描述</label>
+                                <textarea rows="3" placeholder="请输入资源描述"></textarea>
+                            </div>
+                            <button type="button" class="btn-submit" onclick="showAlert('资源上传成功！', 'success')">上传</button>
+                        </form>
+                    </div>
+
+                    <h4>已上传资源</h4>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>资源名称</th>
+                                    <th>类型</th>
+                                    <th>格式</th>
+                                    <th>大小</th>
+                                    <th>上传时间</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>第1章 HTML基础课件</td>
+                                    <td>教学课件</td>
+                                    <td>PPTX</td>
+                                    <td>5.2 MB</td>
+                                    <td>2024-01-10</td>
+                                    <td>
+                                        <a href="#" class="btn-small" onclick="showAlert('编辑资源', 'info')">编辑</a>
+                                        <a href="#" class="btn-small" onclick="showAlert('资源已删除', 'error')">删除</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>HTML标签详解视频</td>
+                                    <td>视频教程</td>
+                                    <td>MP4</td>
+                                    <td>120 MB</td>
+                                    <td>2024-01-12</td>
+                                    <td>
+                                        <a href="#" class="btn-small" onclick="showAlert('编辑资源', 'info')">编辑</a>
+                                        <a href="#" class="btn-small" onclick="showAlert('资源已删除', 'error')">删除</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="evaluation" class="tab-content">
+                    <h3>📝 评价反馈</h3>
+                    
+                    <h4>待批改作品</h4>
+                    <div class="table-container" style="margin-bottom: 30px;">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>作品名称</th>
+                                    <th>学生</th>
+                                    <th>班级</th>
+                                    <th>提交时间</th>
+                                    <th>状态</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>我的校园生活</td>
+                                    <td>赵六</td>
+                                    <td>七(1)班</td>
+                                    <td>2024-01-20</td>
+                                    <td><span style="color: #ff9800;">待批改</span></td>
+                                    <td><a href="#" class="btn-small" onclick="showAlert('打开批改界面', 'info')">批改</a></td>
+                                </tr>
+                                <tr>
+                                    <td>美丽的家乡</td>
+                                    <td>孙七</td>
+                                    <td>七(2)班</td>
+                                    <td>2024-01-21</td>
+                                    <td><span style="color: #ff9800;">待批改</span></td>
+                                    <td><a href="#" class="btn-small" onclick="showAlert('打开批改界面', 'info')">批改</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="card">
+                        <h4>批改作品</h4>
+                        <form>
+                            <div class="form-group">
+                                <label>选择学生</label>
+                                <select>
+                                    <option>请选择学生</option>
+                                    <option>赵六 - 七(1)班</option>
+                                    <option>孙七 - 七(2)班</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>评分 (0-100)</label>
+                                <input type="number" min="0" max="100" placeholder="请输入分数">
+                            </div>
+                            <div class="form-group">
+                                <label>评语</label>
+                                <textarea rows="4" placeholder="请输入评语"></textarea>
+                            </div>
+                            <button type="button" class="btn-submit" onclick="showAlert('评语已提交！', 'success')">提交评语</button>
+                        </form>
+                    </div>
+
+                    <div class="card" style="margin-top: 30px;">
+                        <h4>批量导出成绩单</h4>
+                        <form>
+                            <div class="form-group">
+                                <label>选择班级</label>
+                                <select>
+                                    <option>请选择班级</option>
+                                    <option>七年级(1)班</option>
+                                    <option>七年级(2)班</option>
+                                    <option>七年级(3)班</option>
+                                    <option>全部班级</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>导出格式</label>
+                                <select>
+                                    <option>Excel (.xlsx)</option>
+                                    <option>PDF</option>
+                                    <option>CSV</option>
+                                </select>
+                            </div>
+                            <button type="button" class="btn-submit" onclick="showAlert('成绩单导出成功！', 'success')">导出</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 网页展活动学习平台. 让每个孩子都能学会网页制作！</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

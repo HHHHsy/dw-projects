@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>在线测试 - 网页展活动</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>🎨 网页展活动</h1>
+            </div>
+            <nav class="nav" id="nav">
+                <ul>
+                    <li><a href="../index.html">首页</a></li>
+                    <li><a href="course.html">课程学习</a></li>
+                    <li><a href="tools.html">工具教程</a></li>
+                    <li><a href="tasks.html">实践任务</a></li>
+                    <li><a href="works.html">作品展示</a></li>
+                    <li><a href="quiz.html" class="active">在线测试</a></li>
+                    <li><a href="resources.html">资源下载</a></li>
+                    <li><a href="teacher.html">教师专区</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" id="menuToggle">☰</button>
+        </div>
+    </header>
+
+    <section class="page-content">
+        <div class="container">
+            <h2 class="page-title">📝 在线测试</h2>
+            
+            <div class="section">
+                <h3>📋 测试列表</h3>
+                <div class="card-grid">
+                    <div class="card">
+                        <h4>HTML基础测试</h4>
+                        <p><strong>题目数量：</strong>10题</p>
+                        <p><strong>满分：</strong>100分</p>
+                        <p><strong>时间限制：</strong>30分钟</p>
+                        <a href="#" class="btn-small" onclick="showAlert('开始测试！', 'success')">开始测试</a>
+                    </div>
+                    <div class="card">
+                        <h4>CSS样式测试</h4>
+                        <p><strong>题目数量：</strong>10题</p>
+                        <p><strong>满分：</strong>100分</p>
+                        <p><strong>时间限制：</strong>30分钟</p>
+                        <a href="#" class="btn-small" onclick="showAlert('开始测试！', 'success')">开始测试</a>
+                    </div>
+                    <div class="card">
+                        <h4>Dreamweaver操作测试</h4>
+                        <p><strong>题目数量：</strong>10题</p>
+                        <p><strong>满分：</strong>100分</p>
+                        <p><strong>时间限制：</strong>30分钟</p>
+                        <a href="#" class="btn-small" onclick="showAlert('开始测试！', 'success')">开始测试</a>
+                    </div>
+                    <div class="card">
+                        <h4>综合测试</h4>
+                        <p><strong>题目数量：</strong>20题</p>
+                        <p><strong>满分：</strong>100分</p>
+                        <p><strong>时间限制：</strong>60分钟</p>
+                        <a href="#" class="btn-small" onclick="showAlert('开始测试！', 'success')">开始测试</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3>📊 我的成绩</h3>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>测试名称</th>
+                                <th>分数</th>
+                                <th>完成时间</th>
+                                <th>状态</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>HTML基础测试</td>
+                                <td style="color: #4CAF50; font-weight: bold;">90分</td>
+                                <td>2024-01-15</td>
+                                <td><span style="color: #4CAF50;">已通过 ✓</span></td>
+                            </tr>
+                            <tr>
+                                <td>CSS样式测试</td>
+                                <td style="color: #f44336; font-weight: bold;">55分</td>
+                                <td>2024-01-18</td>
+                                <td><span style="color: #f44336;">需补考 ✗</span></td>
+                            </tr>
+                            <tr>
+                                <td>Dreamweaver操作测试</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td><span style="color: #999;">未开始</span></td>
+                            </tr>
+                            <tr>
+                                <td>综合测试</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td><span style="color: #999;">未开始</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 网页展活动学习平台. 让每个孩子都能学会网页制作！</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

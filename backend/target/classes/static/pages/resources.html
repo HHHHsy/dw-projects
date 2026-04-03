@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>资源下载 - 网页展活动</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- DREAMWEAVER_PREVIEW_START - 此部分用于Dreamweaver预览，请在../components/header.html中修改实际内容 -->
+    <div style="display:none;" id="header-placeholder"></div>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>网页展活动</h1>
+            </div>
+            <nav class="nav" id="nav">
+                <ul>
+                    <li><a href="../index.html">首页</a></li>
+                    <li><a href="course.html">课程学习</a></li>
+                    <li><a href="tools.html">工具教程</a></li>
+                    <li><a href="tasks.html">实践任务</a></li>
+                    <li><a href="works.html">作品展示</a></li>
+                    <li><a href="quiz.html">在线测试</a></li>
+                    <li><a href="resources.html" class="active">资源下载</a></li>
+                    <li id="teacherNavItem" style="display: none;"><a href="teacher.html">教师专区</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions" id="userActions">
+                <button class="btn-login" id="loginBtn" onclick="showLoginModal()">登录</button>
+                <div class="user-info" id="userInfo" style="display: none;">
+                    <span id="userName"></span>
+                    <button class="btn-logout" onclick="logout()">退出</button>
+                </div>
+            </div>
+            <button class="menu-toggle" id="menuToggle">☰</button>
+        </div>
+    </header>
+
+    <div class="login-modal" id="loginModal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeLoginModal()">&times;</span>
+            <h2>用户登录</h2>
+            <form id="loginForm" onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label for="loginUsername">用户名</label>
+                    <input type="text" id="loginUsername" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">密码</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                <button type="submit" class="btn btn-primary">登录</button>
+            </form>
+        </div>
+    </div>
+    <!-- DREAMWEAVER_PREVIEW_END -->
+
+    <section class="page-content">
+        <div class="container">
+            <h2 class="page-title">📥 资源下载</h2>
+            
+            <div class="section">
+                <h3>📚 课程资料</h3>
+                <div class="card-grid">
+                    <div class="card">
+                        <h4>HTML学习手册</h4>
+                        <p>包含HTML常用标签的详细说明和示例</p>
+                        <p style="margin: 10px 0; color: #666;">格式：PDF | 大小：2.5MB</p>
+                        <a href="#" class="btn-small" onclick="showAlert('正在下载HTML学习手册.pdf...', 'success')">下载</a>
+                    </div>
+                    <div class="card">
+                        <h4>CSS样式参考</h4>
+                        <p>CSS属性速查手册，快速找到你需要的样式</p>
+                        <p style="margin: 10px 0; color: #666;">格式：PDF | 大小：3.2MB</p>
+                        <a href="#" class="btn-small" onclick="showAlert('正在下载CSS样式参考.pdf...', 'success')">下载</a>
+                    </div>
+                    <div class="card">
+                        <h4>Dreamweaver入门教程</h4>
+                        <p>图文并茂的DW软件使用教程</p>
+                        <p style="margin: 10px 0; color: #666;">格式：PDF | 大小：5.8MB</p>
+                        <a href="#" class="btn-small" onclick="showAlert('正在下载Dreamweaver入门教程.pdf...', 'success')">下载</a>
+                    </div>
+                    <div class="card">
+                        <h4>网页配色方案集</h4>
+                        <p>精选的网页配色方案，让你的网页更漂亮</p>
+                        <p style="margin: 10px 0; color: #666;">格式：ZIP | 大小：12MB</p>
+                        <a href="#" class="btn-small" onclick="showAlert('正在下载网页配色方案集.zip...', 'success')">下载</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3>💻 示例代码</h3>
+                <div class="card-grid">
+                    <div class="card">
+                        <h4>个人主页模板</h4>
+                        <p>一个简单的个人主页HTML模板</p>
+                        <p style="margin: 10px 0; color: #666;">格式：HTML | 大小：5KB</p>
+                        <a href="#" class="btn-small" onclick="showAlert('正在下载个人主页模板.html...', 'success')">下载</a>
+                    </div>
+                    <div class="card">
+                        <h4>CSS基础样式表</h4>
+                        <p>常用的CSS样式，可以直接引用</p>
+                        <p style="margin: 10px 0; color: #666;">格式：CSS | 大小：3KB</p>
+                        <a href="#" class="btn-small" onclick="showAlert('正在下载CSS基础样式表.css...', 'success')">下载</a>
+                    </div>
+                    <div class="card">
+                        <h4>完整网站示例</h4>
+                        <p>包含多个页面的完整网站示例代码</p>
+                        <p style="margin: 10px 0; color: #666;">格式：ZIP | 大小：256KB</p>
+                        <a href="#" class="btn-small" onclick="showAlert('正在下载完整网站示例.zip...', 'success')">下载</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3>🎨 图片素材</h3>
+                <div class="card-grid">
+                    <div class="card">
+                        <h4>图标素材包</h4>
+                        <p>常用网页图标，PNG格式</p>
+                        <p style="margin: 10px 0; color: #666;">格式：ZIP | 大小：8MB</p>
+                        <a href="#" class="btn-small" onclick="showAlert('正在下载图标素材包.zip...', 'success')">下载</a>
+                    </div>
+                    <div class="card">
+                        <h4>背景图片集</h4>
+                        <p>精选的网页背景图片</p>
+                        <p style="margin: 10px 0; color: #666;">格式：ZIP | 大小：45MB</p>
+                        <a href="#" class="btn-small" onclick="showAlert('正在下载背景图片集.zip...', 'success')">下载</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 网页展活动学习平台. 让每个孩子都能学会网页制作！</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/loader.js"></script>
+</body>
+</html>

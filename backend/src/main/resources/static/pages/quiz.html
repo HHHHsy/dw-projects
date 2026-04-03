@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>在线测试 - 网页展活动</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- DREAMWEAVER_PREVIEW_START - 此部分用于Dreamweaver预览，请在../components/header.html中修改实际内容 -->
+    <div style="display:none;" id="header-placeholder"></div>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>网页展活动</h1>
+            </div>
+            <nav class="nav" id="nav">
+                <ul>
+                    <li><a href="../index.html">首页</a></li>
+                    <li><a href="course.html">课程学习</a></li>
+                    <li><a href="tools.html">工具教程</a></li>
+                    <li><a href="tasks.html">实践任务</a></li>
+                    <li><a href="works.html">作品展示</a></li>
+                    <li><a href="quiz.html" class="active">在线测试</a></li>
+                    <li><a href="resources.html">资源下载</a></li>
+                    <li id="teacherNavItem" style="display: none;"><a href="teacher.html">教师专区</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions" id="userActions">
+                <button class="btn-login" id="loginBtn" onclick="showLoginModal()">登录</button>
+                <div class="user-info" id="userInfo" style="display: none;">
+                    <span id="userName"></span>
+                    <button class="btn-logout" onclick="logout()">退出</button>
+                </div>
+            </div>
+            <button class="menu-toggle" id="menuToggle">☰</button>
+        </div>
+    </header>
+
+    <div class="login-modal" id="loginModal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeLoginModal()">&times;</span>
+            <h2>用户登录</h2>
+            <form id="loginForm" onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label for="loginUsername">用户名</label>
+                    <input type="text" id="loginUsername" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">密码</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                <button type="submit" class="btn btn-primary">登录</button>
+            </form>
+        </div>
+    </div>
+    <!-- DREAMWEAVER_PREVIEW_END -->
+
+    <section class="page-content">
+        <div class="container">
+            <h2 class="page-title">📝 在线测试</h2>
+            
+            <div class="section">
+                <h3>📋 HTML基础测试</h3>
+                <div class="quiz-container" id="quizContainer">
+                    <p class="quiz-info">共 10 题 | 满分 100 分 | 限时 20 分钟</p>
+                    
+                    <form id="quizForm">
+                        <div class="question">
+                            <h4>1. HTML是什么的缩写？</h4>
+                            <div class="options">
+                                <label><input type="radio" name="q1" value="A"> A. High Tech Modern Language</label>
+                                <label><input type="radio" name="q1" value="B"> B. Hyper Text Markup Language</label>
+                                <label><input type="radio" name="q1" value="C"> C. Home Tool Markup Language</label>
+                                <label><input type="radio" name="q1" value="D"> D. Hyperlinks and Text Markup Language</label>
+                            </div>
+                        </div>
+
+                        <div class="question">
+                            <h4>2. HTML中用于创建一级标题的标签是？</h4>
+                            <div class="options">
+                                <label><input type="radio" name="q2" value="A"> A. &lt;heading&gt;</label>
+                                <label><input type="radio" name="q2" value="B"> B. &lt;head&gt;</label>
+                                <label><input type="radio" name="q2" value="C"> C. &lt;h1&gt;</label>
+                                <label><input type="radio" name="q2" value="D"> D. &lt;h6&gt;</label>
+                            </div>
+                        </div>
+
+                        <div class="question">
+                            <h4>3. 插入图片应该使用哪个标签？</h4>
+                            <div class="options">
+                                <label><input type="radio" name="q3" value="A"> A. &lt;image&gt;</label>
+                                <label><input type="radio" name="q3" value="B"> B. &lt;img&gt;</label>
+                                <label><input type="radio" name="q3" value="C"> C. &lt;pic&gt;</label>
+                                <label><input type="radio" name="q3" value="D"> D. &lt;photo&gt;</label>
+                            </div>
+                        </div>
+
+                        <div class="question">
+                            <h4>4. &lt;a&gt;标签的什么属性用于指定链接地址？</h4>
+                            <div class="options">
+                                <label><input type="radio" name="q4" value="A"> A. link</label>
+                                <label><input type="radio" name="q4" value="B"> B. src</label>
+                                <label><input type="radio" name="q4" value="C"> C. href</label>
+                                <label><input type="radio" name="q4" value="D"> D. url</label>
+                            </div>
+                        </div>
+
+                        <div class="question">
+                            <h4>5. 以下哪个是换行标签？</h4>
+                            <div class="options">
+                                <label><input type="radio" name="q5" value="A"> A. &lt;break&gt;</label>
+                                <label><input type="radio" name="q5" value="B"> B. &lt;br&gt;</label>
+                                <label><input type="radio" name="q5" value="C"> C. &lt;lb&gt;</label>
+                                <label><input type="radio" name="q5" value="D"> D. &lt;hr&gt;</label>
+                            </div>
+                        </div>
+
+                        <div style="text-align: center; margin-top: 30px;">
+                            <button type="button" class="btn btn-primary" onclick="submitQuiz()">提交答案</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3>🏆 测试记录</h3>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>测试名称</th>
+                                <th>得分</th>
+                                <th>完成时间</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>HTML基础测试</td>
+                                <td>-</td>
+                                <td>未完成</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 网页展活动学习平台. 让每个孩子都能学会网页制作！</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/loader.js"></script>
+</body>
+</html>
