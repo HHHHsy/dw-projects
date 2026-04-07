@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网页展活动 - 初中信息技术学习平台</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>🎨 网页展活动</h1>
+            </div>
+            <nav class="nav" id="nav">
+                <ul>
+                    <li><a href="index.html" class="active">首页</a></li>
+                    <li><a href="course.html">课程学习</a></li>
+                    <li><a href="tools.html">工具教程</a></li>
+                    <li><a href="tasks.html">实践任务</a></li>
+                    <li><a href="works.html">作品展示</a></li>
+                    <li><a href="quiz.html">在线测试</a></li>
+                    <li><a href="resources.html">资源下载</a></li>
+                    <li id="teacherNavItem" style="display: none;"><a href="teacher.html">教师专区</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions" id="userActions">
+                <button class="btn-login" id="loginBtn" onclick="showLoginModal()">登录</button>
+                <div class="user-info" id="userInfo" style="display: none;">
+                    <span id="userName"></span>
+                    <button class="btn-logout" onclick="logout()">退出</button>
+                </div>
+            </div>
+            <button class="menu-toggle" id="menuToggle">☰</button>
+        </div>
+    </header>
+
+    <div class="login-modal" id="loginModal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeLoginModal()">&times;</span>
+            <h2>用户登录</h2>
+            <form id="loginForm" onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label for="loginUsername">用户名</label>
+                    <input type="text" id="loginUsername" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">密码</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                <button type="submit" class="btn btn-primary">登录</button>
+            </form>
+        </div>
+    </div>
+
+    <section class="hero">
+        <div class="container">
+            <h2>欢迎来到网页制作学习天地！</h2>
+            <p>在这里，你将学会用HTML、CSS和Dreamweaver创建精彩的网页作品</p>
+            <div class="hero-buttons">
+                <a href="course.html" class="btn btn-primary">开始学习</a>
+                <a href="tasks.html" class="btn btn-secondary">查看任务</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h3>我们的课程特色</h3>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h4>课程导学</h4>
+                    <p>清晰的学习目标和内容安排，让你轻松入门</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎬</div>
+                    <h4>视频教程</h4>
+                    <p>生动的操作演示，跟着老师一步步学习</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💻</div>
+                    <h4>实践任务</h4>
+                    <p>从简单到复杂，逐步完成你的网页作品</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏆</div>
+                    <h4>作品展示</h4>
+                    <p>展示你的成果，和同学们一起交流进步</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="learning-path">
+        <div class="container">
+            <h3>学习路径</h3>
+            <div class="path-steps">
+                <div class="path-step">
+                    <div class="step-number">1</div>
+                    <h4>HTML基础</h4>
+                    <p>学习HTML标签和网页结构</p>
+                </div>
+                <div class="path-arrow">→</div>
+                <div class="path-step">
+                    <div class="step-number">2</div>
+                    <h4>CSS样式</h4>
+                    <p>用CSS美化你的网页</p>
+                </div>
+                <div class="path-arrow">→</div>
+                <div class="path-step">
+                    <div class="step-number">3</div>
+                    <h4>Dreamweaver</h4>
+                    <p>使用专业工具高效制作</p>
+                </div>
+                <div class="path-arrow">→</div>
+                <div class="path-step">
+                    <div class="step-number">4</div>
+                    <h4>完成作品</h4>
+                    <p>展示你的网页展活动作品</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 网页展活动学习平台. 让每个孩子都能学会网页制作！</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
